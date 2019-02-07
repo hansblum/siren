@@ -19,7 +19,7 @@ Clone this repository and cd into the siren folder.
 ```
 git clone git@github.com:hansblum/siren.git
 
-cd siren/siren
+cd siren
 
 npm install
 ```
