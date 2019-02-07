@@ -3,7 +3,7 @@ Siren app
 
 Functional description of the app.
 
-## How to build.
+## cHow to build.
 
 First you have to install nodejs.
 
@@ -29,3 +29,5 @@ And run the server
 ```
 ionic serve
 ```
+
+## Deploy on devices
