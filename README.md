@@ -3,7 +3,7 @@ Siren app
 
 Functional description of the app.
 
-##How to build.
+## How to build.
 
 First you have to install nodejs.
 
