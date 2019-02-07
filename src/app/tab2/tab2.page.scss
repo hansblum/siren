@@ -2,12 +2,33 @@
     display: flex;
 }
 
-.align-items-center {
-    -webkit-box-align: center!important;
-    -ms-flex-align: center!important;
-    align-items: center!important;
+.font-big {
+    font-size: 2em;
 }
 
-.font-big {
-    font-size: 20px;
+.px-4 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.color-blue {
+    background-color: #3880ff;
+}
+
+.button-link {
+    font-size: 1em;
+    color: #3880ff;
+    display: block;
+}
+
+.button-native {
+    background-color: transparent !important;
+}
+
+:host(.button-solid) {
+    --ion-color-primary:#ffffff;
 }

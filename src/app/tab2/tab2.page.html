@@ -7,27 +7,28 @@
 </ion-header>
 
 <ion-content>
-  <ion-input class="font-big" placeholder="Situation name" clearOnEdit></ion-input>
-  <h2>Contact person</h2>
+  <ion-input class="font-big" placeholder="Situation name" clearOnEdit padding-start></ion-input>
+  <hr class="color-blue" margin-start margin-end margin-bottom>
+  <h2 class="px-4 mb-0" margin-top >Contact person</h2>
   <ion-item>
-    <ion-label>Name</ion-label>
+    <ion-label position="floating">Name</ion-label>
     <ion-input></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Phone number</ion-label>
+    <ion-label position="floating">Phone number</ion-label>
     <ion-input></ion-input>
   </ion-item>
-  <ion-button>+ Add another contact person</ion-button>
-  <h2>Your message</h2>
-  <ion-item>
-    <ion-label>Text</ion-label>
+  <a class="px-4 button-link" margin-top>+ Add another contact person</a>
+  <h2 class="px-4 mb-0" margin-top>Your message</h2>
+  <ion-item margin-bottom>
+    <ion-label position="floating">Text</ion-label>
     <ion-input></ion-input>
   </ion-item>
-  <div class="d-flex align-items-center"><span>Add GPS location</span><ion-toggle checked></ion-toggle></div>
-  <h2>Code to send the message</h2>
-  <ion-item>
-    <ion-label>Your 5 digits code</ion-label>
+  <div class="d-flex px-4" justify-content-between align-items-center><span>Add GPS location</span><ion-toggle checked></ion-toggle></div>
+  <h2 class="px-4">Code to send the message</h2>
+  <ion-item margin-bottom>
+    <ion-label position="floating">Your 5 digits code</ion-label>
     <ion-input></ion-input>
   </ion-item>
-  <div class="d-flex align-items-center"><span>Allow voice control</span><ion-toggle checked></ion-toggle></div>
+  <div class="d-flex px-4" justify-content-between align-items-center margin-bottom><span>Allow voice control</span><ion-toggle checked></ion-toggle></div>
 </ion-content>
