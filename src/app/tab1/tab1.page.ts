@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { SMS } from '@ionic-native/sms/ngx';
+import { SirenSituationComponent } from '../siren-situation/siren-situation.component';
+
 
 @Component({
   selector: 'app-tab1',

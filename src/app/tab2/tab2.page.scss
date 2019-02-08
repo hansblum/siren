@@ -32,3 +32,31 @@
 :host(.button-solid) {
     --ion-color-primary:#ffffff;
 }
+
+.close-icon {
+    color: gray;
+    z-index: 20;
+    &:hover, &:focus {
+        color: black;
+    }
+}
+
+.input {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.min-width {
+    min-width: 16px;
+}
+
+.mr-2 {
+    margin-right: 8px;
+}
+
+.w-100 {
+    width: 100%
+}
+
+.hand-pointer:hover {
+  cursor: pointer;
+}

@@ -8,12 +8,15 @@
 
 <ion-content>
   <ion-card class="welcome-card">
-    <ion-img src="/assets/shapes.svg"></ion-img>
+    <ion-img src="/assets/icon/emergency.gif"></ion-img>
     <ion-card-content>
       <p>Hey,</p>
       <p>I am Siren, and I will automatically send messages to your emergency contacts when you are in need.</p>
       <p>Of course I hope you will never need me, but just to be safe... let's add your first emergency situation.</p>
     </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <app-siren-situation></app-siren-situation>
   </ion-card>
   <ion-button (click)='openForm()' expand="full">Add new emergency situation</ion-button>
   <ion-button (click)='sendMessage()' expand="full">DANGERit</ion-button>

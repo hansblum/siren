@@ -7,7 +7,25 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
   addContactPerson() {
-    let dummy = '<ion-item><ion-label position="floating">Name</ion-label><ion-input></ion-input></ion-item><ion-item><ion-label position="floating">Phone number</ion-label><ion-input></ion-input></ion-item>\r\n';
-    document.getElementsByClassName('contact-person')[0].innerHTML += dummy;    
+    const dummy = `
+    <ion-item>
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input class="input"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Phone number</ion-label>
+      <ion-input class="input"></ion-input>
+    </ion-item>`;
+    document.getElementsByClassName('contact-person')[0].innerHTML += dummy;
+  }
+
+  cancelForm() {
+    const currentLocation = window.location.href;
+    const newLocation = currentLocation.replace('tab2', 'tab1');
+    window.location.href = newLocation;
+  }
+
+  saveInfo() {
+    console.log('saved');
   }
 }

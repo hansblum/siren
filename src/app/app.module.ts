@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { SMS } from '@ionic-native/sms/ngx';
+import { StoreService } from './api/store.service';
 
 import { Platform } from '@ionic/angular';
 @NgModule({
@@ -21,9 +22,10 @@ import { Platform } from '@ionic/angular';
     SplashScreen,
     Geolocation,
     SMS,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    StoreService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent ]
 })
 export class AppModule {
   
