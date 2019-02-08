@@ -19,10 +19,10 @@ export class SirenSituationComponent implements OnInit {
     this.situations = [];
   }
 
-  ngOnInit() {
+   ngOnInit() {
     this.storeService.get().then((situations) => {
       this.situations = situations;
-      if (this.situations.length > 0 ) {
+      if (this.situations && this.situations.length!=0) {
         this.situation = this.situations[0];
       }
     });
@@ -51,9 +51,7 @@ export class SirenSituationComponent implements OnInit {
 	}
 
 	openForm() {
-      let currentLocation = new String(window.location);
-      let newLocation = currentLocation.replace('tab3', 'tab2');
-      window.location.href = newLocation;
+      window.location.href = "/tabs/tab2";
   }
 
   sendMessage(){
