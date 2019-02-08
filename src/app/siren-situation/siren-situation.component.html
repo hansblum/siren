@@ -1,9 +1,9 @@
-<ion-card-content *ngIf="situation.situationName.length == 0" margin class="card-container">
+<ion-card-content *ngIf="showSituation(situation)" margin class="card-container">
     <p>Hey,</p>
     <p>I am Siren, and I will automatically send messages to your emergency contacts when you are in need.</p>
     <p>Of course I hope you will never need me, but just to be safe... let's add your first emergency situation.</p>
 </ion-card-content>
-<div *ngIf="situation.situationName.length > 0" margin class="card-container">
+<div *ngIf="showSituation(situation)" margin class="card-container">
     <h3 class="color-blue">{{situation.situationName}}</h3>
     <h4>Contact</h4>
     <span>{{situation.contactPersons[0].name}}</span>&#160;<span>{{situation.contactPersons[0].phoneNumber}}</span>
