@@ -15,7 +15,7 @@
     </ion-card-content>
   </ion-card>
 
-<div class="mb-8 px-4">
+<div class="mb-16 px-4">
   <ion-button expand="full" color="danger" (click) = "presentAlert()">
     <ion-icon class="mr-2" src="/assets/icon/siren.svg"></ion-icon>
   Emergency
@@ -23,11 +23,11 @@
   </ion-button>
 </div>
 
-<div class="px-4 mb-8">
+<div text-center class="mb-30">
   <ion-button>Delete</ion-button>
   <ion-button class="ml-8" (click)='openForm()'>Change</ion-button>
 </div>
-
-  <a class="px-4 button-link hand-pointer" margin-top (click)='openForm()'>+ Add new emergency situation</a>
-
+<div text-center>
+<a margin-horizontal class="button-link hand-pointer" margin-top (click)='openForm()'>+ Add new emergency situation</a>
+</div>
 </ion-content>
