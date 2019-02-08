@@ -9,7 +9,7 @@ import { StoreService } from '../api/store.service';
 
 export class SirenSituationComponent implements OnInit {
   private situations: any[];
-  private situation: any;
+  public situation: any;
 
   constructor(private storeService: StoreService) {
     this.situations = [];
