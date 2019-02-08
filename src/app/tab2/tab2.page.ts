@@ -16,12 +16,12 @@ export class Tab2Page {
       <ion-label position="stacked">Phone number</ion-label>
       <ion-input class="input"></ion-input>
     </ion-item>`;
-    document.getElementsByClassName('contact-person')[0].innerHTML += dummy;    
+    document.getElementsByClassName('contact-person')[0].innerHTML += dummy;
   }
 
   cancelForm() {
-    let currentLocation = new String(window.location);
-    let newLocation = currentLocation.replace('tab2', 'tab1');
+    const currentLocation = window.location.href;
+    const newLocation = currentLocation.replace('tab2', 'tab1');
     window.location.href = newLocation;
   }
 
