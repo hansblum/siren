@@ -1,8 +1,12 @@
-<ion-card-content *ngIf="showSituation(situation)" margin class="card-container">
-    <p>Hey,</p>
-    <p>I am Siren, and I will automatically send messages to your emergency contacts when you are in need.</p>
-    <p>Of course I hope you will never need me, but just to be safe... let's add your first emergency situation.</p>
-</ion-card-content>
+<div *ngIf="!showSituation(situation)">
+    <ion-card-content margin class="card-container">
+        <p>Hey,</p>
+        <p>I am Siren, and I will automatically send messages to your emergency contacts when you are in need.</p>
+        <p>Of course I hope you will never need me, but just to be safe... let's add your first emergency situation.</p>
+    </ion-card-content>
+    <a margin-horizontal class="button-link hand-pointer" margin-top (click)='openForm()'>+ Add new emergency
+        situation</a>
+</div>
 <div *ngIf="showSituation(situation)" margin class="card-container">
     <h3 class="color-blue">{{situation.situationName}}</h3>
     <h4>Contact</h4>
@@ -19,8 +23,8 @@
         </ion-button>
     </div>
 
-    <div text-center class="mb-30 d-flex" justify-content-between>
-        <ion-button>Delete</ion-button>
+    <div text-center class="mb-30 d-flex" justify-content-center>
+        <ion-button class="mr-2">Delete</ion-button>
         <ion-button (click)='openForm()'>Change</ion-button>
     </div>
 </div>

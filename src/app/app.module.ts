@@ -12,6 +12,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { SMS } from '@ionic-native/sms/ngx';
 import { StoreService } from './api/store.service';
 import { IonicStorageModule} from '@ionic/storage';
+import { BrowserTab } from '@ionic-native/browser-tab/ngx';
 
 import { Platform } from '@ionic/angular';
 @NgModule({
@@ -23,6 +24,7 @@ import { Platform } from '@ionic/angular';
     SplashScreen,
     Geolocation,
     SMS,
+    BrowserTab,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StoreService
   ],
