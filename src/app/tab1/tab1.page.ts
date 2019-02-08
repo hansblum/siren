@@ -17,7 +17,7 @@ export class Tab1Page {
   sendMessage(){
     this.geolocation.getCurrentPosition().then((resp) => {
       this.myLocation = resp.coords;
-      this.sms.send('0612221161', 'I am in danger!  😱 , my current latitude is ' + resp.coords.latitude + 'and longitude is ' + resp.coords.longitude);
+      this.sms.send('0612221161', 'I am in danger!  😱 , help me please [20:43, 8-2-2019] Alina: https://maps.google.com/?q=' + resp.coords.latitude + ',' + resp.coords.longitude);
      // resp.coords.latitude
       console.log('Error getting location', resp);
       // resp.coords.longitude
