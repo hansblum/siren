@@ -27,7 +27,11 @@
     <ion-label position="stacked">Text</ion-label>
     <ion-input class="input"></ion-input>
   </ion-item>
-  <div class="d-flex px-4" justify-content-between align-items-center><span>Add GPS location</span>
+  <div class="d-flex px-4" justify-content-between align-items-center>
+    <div>
+        <ion-icon class="min-width mr-2" name="pin"></ion-icon>
+        <span>Add GPS location</span>
+    </div>
     <ion-toggle checked></ion-toggle>
   </div>
   <h2 class="px-4">Code to send the message</h2>
@@ -35,13 +39,14 @@
     <ion-label position="stacked">Your 5 digits code</ion-label>
     <ion-input class="input" type="number" maxlength="5"></ion-input>
   </ion-item>
-  <div class="d-flex px-4" justify-content-between align-items-center margin-bottom><span>Allow voice control</span><ion-toggle checked></ion-toggle></div>
-  <ion-button (click)="saveInfo()">Save</ion-button>
   <div class="d-flex px-4" justify-content-between align-items-center margin-bottom>
   <div>
       <ion-icon class="min-width mr-2" src="/assets/icon/voiceimage.svg"></ion-icon>
       <span>Allow voice control</span>
   </div>
     <ion-toggle checked></ion-toggle>
+  </div>
+  <div margin-horizontal>
+    <ion-button class="w-100" (click)="saveInfo()">Save</ion-button>
   </div>
 </ion-content>
