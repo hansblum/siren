@@ -7,13 +7,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="sendMessage()">THANK YOU ALINA</ion-button>
   <ion-card class="welcome-card">
-    <div class="bg-siren"><ion-img src="/assets/icon/emergency.gif"></ion-img></div>
+    <div class="bg-siren">
+      <ion-img src="/assets/icon/emergency.gif"></ion-img>
+    </div>
   </ion-card>
   <ion-card>
     <app-siren-situation></app-siren-situation>
   </ion-card>
-    <a margin-horizontal class="button-link hand-pointer" margin-top (click)='openForm()'>+ Add new emergency
-      situation</a>
+  <a margin-horizontal class="button-link hand-pointer" margin-top (click)='openForm()'>+ Add new emergency
+    situation</a>
 </ion-content>

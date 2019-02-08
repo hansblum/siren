@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 
 @Component({
@@ -8,22 +8,24 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  constructor(public alertController: AlertController) {}
+  myLocation: any;
+  constructor(private geolocation: Geolocation) {
+  }
 
-	async presentAlert() {
-	  let alert = await this.alertController.create({
-	  header: 'Siren Alert',
-      subHeader: 'Message sent successfully',
-      message: 'Superman is coming to save you :)',
-      buttons: ['OK']
+
+  goHome() {
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.myLocation = resp.coords.latitude + ',' + resp.coords.longitude;
+      const homeLocation = "49.46800006494457,17.11514008755796";
+      console.log(this.myLocation)
+      window.location.href = "https://www.google.com/maps/dir/'" + this.myLocation + "'/'" + homeLocation + "'";
+    }).catch((error) => {
+      this.myLocation = error;
     });
-	 await alert.present();
-	}
-
-	openForm() {
-      let currentLocation = new String(window.location);
-      let newLocation = currentLocation.replace('tab3', 'tab2');
-      window.location.href = newLocation;
+    
+    let watch = this.geolocation.watchPosition();
+    watch.subscribe((data) => {
+    });
   }
 
 }
