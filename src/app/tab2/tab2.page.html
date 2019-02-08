@@ -7,30 +7,37 @@
 </ion-header>
 
 <ion-content>
-    <ion-input class="font-big" placeholder="Situation name" clearOnEdit padding-start></ion-input>
-    <hr class="color-blue" margin-start margin-end margin-bottom>
-    <h2 class="px-4 mb-0" margin-top >Contact person</h2>
-    <div class="contact-person">
-      <ion-item>
-        <ion-label position="stacked">Name</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Phone number</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-    </div>
+  <ion-input class="font-big" placeholder="Situation name" clearOnEdit padding-start></ion-input>
+  <hr class="color-blue" margin-start margin-end margin-bottom>
+  <h2 class="px-4 mb-0" margin-top>Contact person</h2>
+  <div class="contact-person">
+    <ion-item>
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Phone number</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </div>
   <a class="px-4 button-link" margin-top (click)='addContactPerson()'>+ Add another contact person</a>
   <h2 class="px-4 mb-0" margin-top>Your message</h2>
   <ion-item margin-bottom>
     <ion-label position="stacked">Text</ion-label>
     <ion-input></ion-input>
   </ion-item>
-  <div class="d-flex px-4" justify-content-between align-items-center><span>Add GPS location</span><ion-toggle checked></ion-toggle></div>
+  <div class="d-flex px-4" justify-content-between align-items-center><span>Add GPS location</span>
+    <ion-toggle checked></ion-toggle>
+  </div>
   <h2 class="px-4">Code to send the message</h2>
   <ion-item margin-bottom>
     <ion-label position="stacked">Your 5 digits code</ion-label>
     <ion-input type="number" maxlength="5"></ion-input>
   </ion-item>
-  <div class="d-flex px-4" justify-content-between align-items-center margin-bottom><span>Allow voice control</span><ion-toggle checked></ion-toggle></div>
+  <div class="d-flex px-4" justify-content-between align-items-center margin-bottom>
+    <ion-icon src="/assets/icon/voiceimage.svg"></ion-icon><br>
+    <span style="padding-right: 657px">Allow voice control</span>
+
+    <ion-toggle checked></ion-toggle>
+  </div>
 </ion-content>
