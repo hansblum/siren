@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StoreService } from '../api/store.service';
 
 @Component({
   selector: 'app-tab2',
@@ -6,6 +7,30 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+ private situations: any[];
+  public situation: any;
+
+  constructor(private storeService: StoreService) {
+    this.situations = [];
+    this.situation={};
+  }
+
+
+  ngOnInit() {
+  
+    this.storeService.get().then((situations) => {
+      this.situations = situations;
+      if (this.situations && this.situations.length!=0) {
+        this.situation = this.situations[0];
+        }
+      
+    });
+  }
+  
+  showSituation(situation: {situationName: String}){
+    return situation && situation.situationName;
+  }
+
   addContactPerson() {
     const dummy = `
     <ion-item>

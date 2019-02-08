@@ -7,6 +7,11 @@
 </ion-header>
 
 <ion-content>
+  <h3 class="color-blue">{{situation.situationName}}</h3>
+    <h4>Contact</h4>
+    <hr>
+    <h4>Message</h4>
+    <p>{{situation.message}}</p>
     <ion-icon float-right class="close-icon" margin name="close-circle-outline" (click)="cancelForm()" size="large"></ion-icon>
     <ion-input class="font-big" placeholder="Situation name" clearOnEdit padding-start></ion-input>
     <hr class="line-blue" margin-start margin-end margin-bottom>
@@ -14,7 +19,7 @@
     <div class="contact-person">
       <ion-item lines="none">
         <ion-label position="stacked">Name</ion-label>
-        <ion-input class="input"></ion-input>
+        <ion-input class="input">{{situation.situationName}}</ion-input>
       </ion-item>
       <ion-item lines="none">
         <ion-label position="stacked">Phone number</ion-label>

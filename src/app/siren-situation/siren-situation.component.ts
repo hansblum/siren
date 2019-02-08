@@ -19,33 +19,18 @@ export class SirenSituationComponent implements OnInit {
     this.situations = [];
   }
 
-  ngOnInit() {
-    this.storeService.save([{
-      situationName: 'PERRITO PANIC',
-      contactPersons: [
-          {
-              name: 'Scrappy Dappy Doo',
-              phoneNumber: '+31629525532'
-          }
-      ],
-      message: 'Please help Perrito, he is in danger',
-      code: '07081'
-      }
-  ]).then(() => {
+   ngOnInit() {
     this.storeService.get().then((situations) => {
       this.situations = situations;
-      if (this.situations.length > 0 ) {
+      if (this.situations && this.situations.length!=0) {
         this.situation = this.situations[0];
       }
-    })
-    .catch((error) => { 
-      alert('dat ging niet helemaal goed' + error)
     });
-  });
-}
-showSituation(situation: {situationName: String}){
-  return situation && situation.situationName;
-}
+  }
+  
+  showSituation(situation: {situationName: String}){
+    return situation && situation.situationName;
+  }
 
   
 
@@ -66,9 +51,7 @@ showSituation(situation: {situationName: String}){
 	}
 
 	openForm() {
-      let currentLocation = new String(window.location);
-      let newLocation = currentLocation.replace('tab3', 'tab2');
-      window.location.href = newLocation;
+      window.location.href = "/tabs/tab2";
   }
 
   sendMessage(){
