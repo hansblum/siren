@@ -8,8 +8,21 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  myLocation: any;
+  public myLocation: any;
+  public myAddress: any;
+  public buttonLabel: string;
   constructor(private geolocation: Geolocation) {
+    this.myAddress = localStorage.getItem('Item 1');
+    this.buttonLabel = this.myAddress ? 'Change' : 'Save';
+  }
+
+  saveAddress() {
+    console.log('some perritos', this.myAddress)
+    let address = 'Item 1';
+    localStorage.setItem(address, this.myAddress);
+    this.myAddress = localStorage.getItem(address);
+    this.buttonLabel = this.myAddress ? 'Change' : 'Save';
+
   }
 
 
@@ -17,7 +30,6 @@ export class Tab3Page {
     this.geolocation.getCurrentPosition().then((resp) => {
       this.myLocation = resp.coords.latitude + ',' + resp.coords.longitude;
       const homeLocation = "49.46800006494457,17.11514008755796";
-      console.log(this.myLocation)
       window.location.href = "https://www.google.com/maps/dir/'" + this.myLocation + "'/'" + homeLocation + "'";
     }).catch((error) => {
       this.myLocation = error;
