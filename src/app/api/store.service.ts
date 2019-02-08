@@ -1,23 +1,18 @@
 import { Injectable } from '@angular/core';
-
+import { Storage } from '@ionic/storage';
 @Injectable({
   providedIn: 'root'
 })
+
 export class StoreService {
 
-  constructor() { }
+  constructor(private storage: Storage) { }
+
   get() {
-      return [{
-          situationName: 'PERRITO PANIC',
-          contactPersons: [
-              {
-                  name: 'Scrappy Dappy Doo',
-                  phoneNumber: '+31629525532'
-              }
-          ],
-          message: 'Please help Perrito, he is in danger',
-          code: '07081'
-          }
-      ];
+      return this.storage.get('situations');
+  }
+
+  save(data: any) {
+    return this.storage.set('situations', data);
   }
 }
