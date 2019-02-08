@@ -11,7 +11,7 @@ export class Tab3Page {
   constructor(public alertController: AlertController) {}
 
 	async presentAlert() {
-	  const alert = await this.alertController.create({
+	  let alert = await this.alertController.create({
 	  header: 'Siren Alert',
       subHeader: 'Message sent successfully',
       message: 'Superman is coming to save you :)',
@@ -19,5 +19,11 @@ export class Tab3Page {
     });
 	 await alert.present();
 	}
+
+	openForm() {
+      let currentLocation = new String(window.location);
+      let newLocation = currentLocation.replace('tab3', 'tab2');
+      window.location.href = newLocation;
+  }
 
 }
