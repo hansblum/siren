@@ -19,6 +19,11 @@
     <app-siren-situation></app-siren-situation>
   </ion-card>
   <ion-button (click)='openForm()' expand="full">Add new emergency situation</ion-button>
+  <ion-button (click)='sendMessage()' expand="full">DANGERit</ion-button>
+  <ion-card-content>
+      <p>Youn current latitude: {{myLocation.latitude}}</p>
+      <p>Youn current longitude: {{myLocation.longitude}}</p>
+    </ion-card-content>
   <ion-list lines="none">
     <ion-list-header>
       <ion-label>Resources</ion-label>

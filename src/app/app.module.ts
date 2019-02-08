@@ -8,8 +8,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { SMS } from '@ionic-native/sms/ngx';
 import { StoreService } from './api/store.service';
 
+import { Platform } from '@ionic/angular';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,9 +20,13 @@ import { StoreService } from './api/store.service';
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
+    SMS,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StoreService
   ],
   bootstrap: [AppComponent ]
 })
-export class AppModule {}
+export class AppModule {
+  
+  }
