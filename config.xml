@@ -88,4 +88,5 @@
     <plugin name="cordova-plugin-geolocation" spec="~4.0.1" />
     <plugin name="cordova-sms-plugin" spec="~1.0.0" />
     <plugin name="cordova-plugin-browsertab" spec="~0.2.0" />
+    <plugin name="cordova-plugin-speechrecognition" spec="~1.1.2" />
 </widget>
