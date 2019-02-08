@@ -14,7 +14,7 @@ export class Tab3Page {
    console.log('vaca');
 
     this.geolocation.getCurrentPosition().then((resp) => {
-      this.myLocation = resp;
+      this.myLocation = {latitude: resp.coords.latitude, longitude: resp.coords.longitude};
      // resp.coords.latitude
       console.log('Error getting location', resp);
       // resp.coords.longitude
