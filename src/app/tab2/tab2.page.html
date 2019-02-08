@@ -7,18 +7,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-input class="font-big" placeholder="Situation name" clearOnEdit padding-start></ion-input>
-  <hr class="color-blue" margin-start margin-end margin-bottom>
-  <h2 class="px-4 mb-0" margin-top >Contact person</h2>
-  <ion-item>
-    <ion-label position="floating">Name</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Phone number</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <a class="px-4 button-link" margin-top>+ Add another contact person</a>
+  <div class="contact-person">
+    <ion-input class="font-big" placeholder="Situation name" clearOnEdit padding-start></ion-input>
+    <hr class="color-blue" margin-start margin-end margin-bottom>
+    <h2 class="px-4 mb-0" margin-top >Contact person</h2>
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Phone number</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </div>
+  <a class="px-4 button-link" margin-top (click)='addContactPerson()'>+ Add another contact person</a>
   <h2 class="px-4 mb-0" margin-top>Your message</h2>
   <ion-item margin-bottom>
     <ion-label position="floating">Text</ion-label>
