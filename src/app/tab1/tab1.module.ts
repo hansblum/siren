@@ -15,4 +15,8 @@ import { SirenSituationComponent } from '../siren-situation/siren-situation.comp
   ],
   declarations: [Tab1Page, SirenSituationComponent]
 })
-export class Tab1PageModule {}
+export class Tab1PageModule {
+
+    
+  
+}

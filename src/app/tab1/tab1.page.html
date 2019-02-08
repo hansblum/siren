@@ -13,17 +13,13 @@
       <p>Hey,</p>
       <p>I am Siren, and I will automatically send messages to your emergency contacts when you are in need.</p>
       <p>Of course I hope you will never need me, but just to be safe... let's add your first emergency situation.</p>
-    </ion-card-content>
+    </ion-card-content> -->
   </ion-card>
   <ion-card>
     <app-siren-situation></app-siren-situation>
   </ion-card>
-  <ion-button (click)='openForm()' expand="full">Add new emergency situation</ion-button>
-  <ion-button (click)='sendMessage()' expand="full">DANGERit</ion-button>
-  <ion-card-content>
-      <p>Youn current latitude: {{myLocation.latitude}}</p>
-      <p>Youn current longitude: {{myLocation.longitude}}</p>
-    </ion-card-content>
+    <a margin-horizontal class="button-link hand-pointer" margin-top (click)='openForm()'>+ Add new emergency
+      situation</a>
   <ion-list lines="none">
     <ion-list-header>
       <ion-label>Resources</ion-label>

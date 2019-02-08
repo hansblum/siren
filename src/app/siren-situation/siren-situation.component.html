@@ -1,6 +1,27 @@
-<h3>{{situation.situationName}}</h3>
-<h4>Contact person</h4>
-<p>{{situation.contactPersons[0].name}}</p>
-<p>{{situation.contactPersons[0].phoneNumber}}</p>
-<hr>
-<p>{{situation.message}}</p>
+    <ion-card-content *ngIf="situation.situationName.length == 0" margin class="card-container">
+
+        <p>Hey,</p>
+        <p>I am Siren, and I will automatically send messages to your emergency contacts when you are in need.</p>
+        <p>Of course I hope you will never need me, but just to be safe... let's add your first emergency situation.</p>
+    </ion-card-content>
+<div *ngIf="situation.situationName.length > 0" margin class="card-container">
+    <h3 class="color-blue">{{situation.situationName}}</h3>
+    <h4>Contact</h4>
+    <span>{{situation.contactPersons[0].name}}</span>&#160;<span>{{situation.contactPersons[0].phoneNumber}}</span>
+    <hr>
+    <h4>Message</h4>
+    <p>{{situation.message}}</p>
+
+    <div class="mb-16 px-4">
+        <ion-button expand="full" color="danger" (click)="presentAlert()">
+            <ion-icon class="mr-2" src="/assets/icon/siren.svg"></ion-icon>
+            Emergency
+
+        </ion-button>
+    </div>
+
+    <div text-center class="mb-30 d-flex" justify-content-between>
+        <ion-button>Delete</ion-button>
+        <ion-button (click)='openForm()'>Change</ion-button>
+    </div>
+</div>
