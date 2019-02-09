@@ -27,21 +27,6 @@
     <ion-label position="stacked">Text</ion-label>
     <ion-input [(ngModel)]="situation.message" class="input" clearOnEdit></ion-input>
   </ion-item>
-  <div class="d-flex px-4" justify-content-between align-items-center>
-    <div>
-        <ion-icon class="min-width mr-2" name="pin"></ion-icon>
-        <span>Add GPS location</span>
-    </div>
-    <ion-toggle checked></ion-toggle>
-  </div>
-  <h2 class="px-4">Code to send the message</h2>
-  <div class="d-flex px-4" justify-content-between align-items-center margin-bottom>
-  <div>
-      <ion-icon class="min-width mr-2" src="/assets/icon/voiceimage.svg"></ion-icon>
-      <span>Allow voice control</span>
-  </div>
-  <ion-toggle checked></ion-toggle>
-  </div>
   <div margin-horizontal>
     <ion-button class="w-100" (click)="saveData()">Save</ion-button>
   </div>

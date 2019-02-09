@@ -21,9 +21,7 @@ export class SirenSituationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.storeService.get().then((situation) => {
-      this.situation = situation;
-    });
+    this.situation = this.storeService.get();
   }
 
   showSituation(situation: {situationName: String}){

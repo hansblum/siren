@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../api/store.service';
 
 @Component({
@@ -6,8 +6,8 @@ import { StoreService } from '../api/store.service';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
-  private situations: any[];
+
+export class Tab2Page implements OnInit{
   public situation: any = {};
   public contactName: any;
   public phoneNumber: any;
@@ -15,21 +15,13 @@ export class Tab2Page {
   public mySituation: any;
 
   constructor(private storeService: StoreService) {
-      this.situations = [this.situation];
   }
 
   ngOnInit() {
-  
-    this.storeService.get().then((situations) => {
-      this.situations = situations;
-      if (this.situations && this.situations.length!=0) {
-        this.situation = this.situations[0];
-        }
-      
-    });
+    this.situation = this.storeService.get();
   }
-  
-  showSituation(situation: {situationName: String}){
+
+  showSituation(situation: {situationName: String}) {
     return situation && situation.situationName;
   }
 
@@ -53,6 +45,6 @@ export class Tab2Page {
   }
 
   saveData() {
-    this.storeService.save(this.situations);
+    this.storeService.save(this.situation);
   }
 }
