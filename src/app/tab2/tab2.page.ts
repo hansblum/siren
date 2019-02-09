@@ -7,10 +7,16 @@ import { StoreService } from '../api/store.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
- private situations: any[];
+  private situations: any[];
   public situation: any;
+  public contactName: any;
+  public phoneNumber: any;
+  public myMessage: any;
 
   constructor(private storeService: StoreService) {
+  this.contactName = localStorage.getItem('Item 1');
+  this.phoneNumber = localStorage.getItem('Item 2');
+  this.myMessage = localStorage.getItem('Item 3');
     this.situations = [];
     this.situation={};
   }
@@ -50,7 +56,20 @@ export class Tab2Page {
     window.location.href = newLocation;
   }
 
-  saveInfo() {
-    console.log('saved');
+  saveData() {
+    console.log('some perritos', this.contactName)
+    let cname = 'Item 1';
+    let number = 'Item 2';
+    let message = 'Item 3';
+
+    localStorage.setItem(cname, this.contactName);
+    this.contactName = localStorage.getItem(cname);
+
+    localStorage.setItem(number, this.phoneNumber);
+    this.phoneNumber = localStorage.getItem(number);
+
+    localStorage.setItem(message, this.myMessage);
+    this.myMessage = localStorage.getItem(message);
+
   }
 }

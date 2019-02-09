@@ -19,18 +19,18 @@
     <div class="contact-person">
       <ion-item lines="none">
         <ion-label position="stacked">Name</ion-label>
-        <ion-input class="input">{{situation.situationName}}</ion-input>
+        <ion-input  [(ngModel)]="contactName" class="input" clearOnEdit></ion-input>
       </ion-item>
       <ion-item lines="none">
         <ion-label position="stacked">Phone number</ion-label>
-        <ion-input class="input"></ion-input>
+        <ion-input [(ngModel)]="phoneNumber" class="input" clearOnEdit></ion-input>
       </ion-item>
     </div>
   <a class="px-4 button-link hand-pointer" margin-top (click)='addContactPerson()'>+ Add another contact person</a>
   <h2 class="px-4 mb-0" margin-top>Your message</h2>
   <ion-item lines="none" margin-bottom>
     <ion-label position="stacked">Text</ion-label>
-    <ion-input class="input"></ion-input>
+    <ion-input [(ngModel)]="myMessage" class="input" clearOnEdit></ion-input>
   </ion-item>
   <div class="d-flex px-4" justify-content-between align-items-center>
     <div>
@@ -40,18 +40,13 @@
     <ion-toggle checked></ion-toggle>
   </div>
   <h2 class="px-4">Code to send the message</h2>
-  <ion-item lines="none" margin-bottom>
-    <ion-label position="stacked">Your 5 digits code</ion-label>
-    <ion-input class="input" type="number" maxlength="5"></ion-input>
-  </ion-item>
   <div class="d-flex px-4" justify-content-between align-items-center margin-bottom>
   <div>
       <ion-icon class="min-width mr-2" src="/assets/icon/voiceimage.svg"></ion-icon>
       <span>Allow voice control</span>
   </div>
-    <ion-toggle checked></ion-toggle>
   </div>
   <div margin-horizontal>
-    <ion-button class="w-100" (click)="saveInfo()">Save</ion-button>
+    <ion-button class="w-100" (click)="saveData()">Save</ion-button>
   </div>
 </ion-content>
