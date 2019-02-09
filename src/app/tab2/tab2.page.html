@@ -14,11 +14,11 @@
     <div class="contact-person">
       <ion-item lines="none">
         <ion-label position="stacked">Name</ion-label>
-        <ion-input  [(ngModel)]="situation.contactPersons[0].name" class="input" clearOnEdit></ion-input>
+        <ion-input  [(ngModel)]="situation.contact" class="input" clearOnEdit></ion-input>
       </ion-item>
       <ion-item lines="none">
         <ion-label position="stacked">Phone number</ion-label>
-        <ion-input [(ngModel)]="situation.contactPersons[0].phoneNumber" class="input" clearOnEdit></ion-input>
+        <ion-input [(ngModel)]="situation.phoneNumber" class="input" clearOnEdit></ion-input>
       </ion-item>
     </div>
   <a class="px-4 button-link hand-pointer" margin-top (click)='addContactPerson()'>+ Add another contact person</a>

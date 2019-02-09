@@ -8,15 +8,15 @@ import { StoreService } from '../api/store.service';
 })
 export class Tab2Page {
   private situations: any[];
-  public situation: any;
+  public situation: any = {};
   public contactName: any;
   public phoneNumber: any;
   public myMessage: any;
   public mySituation: any;
 
-
-  constructor(private storeService: StoreService) {}
-
+  constructor(private storeService: StoreService) {
+      this.situations = [this.situation];
+  }
 
   ngOnInit() {
   
