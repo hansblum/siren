@@ -7,13 +7,8 @@
 </ion-header>
 
 <ion-content>
-  <h3 class="color-blue">{{situation.situationName}}</h3>
-    <h4>Contact</h4>
-    <hr>
-    <h4>Message</h4>
-    <p>{{situation.message}}</p>
     <ion-icon float-right class="close-icon" margin name="close-circle-outline" (click)="cancelForm()" size="large"></ion-icon>
-    <ion-input class="font-big" placeholder="Situation name" clearOnEdit padding-start></ion-input>
+    <ion-input class="font-big" [(ngModel)]="mySituation" placeholder="Situation name" clearOnEdit padding-start></ion-input>
     <hr class="line-blue" margin-start margin-end margin-bottom>
     <h2 class="px-4 mb-0" margin-top >Contact person</h2>
     <div class="contact-person">
@@ -45,6 +40,7 @@
       <ion-icon class="min-width mr-2" src="/assets/icon/voiceimage.svg"></ion-icon>
       <span>Allow voice control</span>
   </div>
+  <ion-toggle checked></ion-toggle>
   </div>
   <div margin-horizontal>
     <ion-button class="w-100" (click)="saveData()">Save</ion-button>

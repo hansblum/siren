@@ -12,11 +12,14 @@ export class Tab2Page {
   public contactName: any;
   public phoneNumber: any;
   public myMessage: any;
+  public mySituation: any;
+
 
   constructor(private storeService: StoreService) {
   this.contactName = localStorage.getItem('Item 1');
   this.phoneNumber = localStorage.getItem('Item 2');
   this.myMessage = localStorage.getItem('Item 3');
+  this.mySituation = localStorage.getItem('Item 4');
     this.situations = [];
     this.situation={};
   }
@@ -61,6 +64,7 @@ export class Tab2Page {
     let cname = 'Item 1';
     let number = 'Item 2';
     let message = 'Item 3';
+    let sos = 'Item 4';
 
     localStorage.setItem(cname, this.contactName);
     this.contactName = localStorage.getItem(cname);
@@ -70,6 +74,9 @@ export class Tab2Page {
 
     localStorage.setItem(message, this.myMessage);
     this.myMessage = localStorage.getItem(message);
+
+    localStorage.setItem(sos, this.mySituation);
+    this.mySituation = localStorage.getItem(sos);
 
   }
 }
