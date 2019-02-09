@@ -8,22 +8,15 @@ import { StoreService } from '../api/store.service';
 })
 export class Tab2Page {
   private situations: any[];
-  public situation: any;
+  public situation: any = {};
   public contactName: any;
   public phoneNumber: any;
   public myMessage: any;
   public mySituation: any;
 
-
   constructor(private storeService: StoreService) {
-  this.contactName = localStorage.getItem('Item 1');
-  this.phoneNumber = localStorage.getItem('Item 2');
-  this.myMessage = localStorage.getItem('Item 3');
-  this.mySituation = localStorage.getItem('Item 4');
-    this.situations = [];
-    this.situation={};
+      this.situations = [this.situation];
   }
-
 
   ngOnInit() {
   
@@ -60,23 +53,6 @@ export class Tab2Page {
   }
 
   saveData() {
-    console.log('some perritos', this.contactName)
-    let cname = 'Item 1';
-    let number = 'Item 2';
-    let message = 'Item 3';
-    let sos = 'Item 4';
-
-    localStorage.setItem(cname, this.contactName);
-    this.contactName = localStorage.getItem(cname);
-
-    localStorage.setItem(number, this.phoneNumber);
-    this.phoneNumber = localStorage.getItem(number);
-
-    localStorage.setItem(message, this.myMessage);
-    this.myMessage = localStorage.getItem(message);
-
-    localStorage.setItem(sos, this.mySituation);
-    this.mySituation = localStorage.getItem(sos);
-
+    this.storeService.save(this.situations);
   }
 }
