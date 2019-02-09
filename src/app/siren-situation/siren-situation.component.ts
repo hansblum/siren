@@ -32,7 +32,7 @@ export class SirenSituationComponent implements OnInit {
     const popupMessage = await this.alertController.create({
       header: 'Siren Alert',
       subHeader: 'Message sent successfully',
-      message: `${this.situation.contactPerson} is coming to save you :)`,
+      message: `${this.situation.contact} is coming to save you :)`,
       buttons: [{
         text: 'OK',
         cssClass: 'primary',
