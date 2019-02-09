@@ -8,21 +8,19 @@
         situation</a>
 </div>
 <div *ngIf="showSituation(situation)" margin class="card-container">
+    <div class="mb-16 px-4">
+        <ion-button size="large" expand="full" color="danger" (click)="presentAlert()">
+            <ion-icon class="mr-2" src="/assets/icon/siren.svg"></ion-icon>
+            Emergency
+        </ion-button>
+    </div>
+
     <h3 class="color-blue">{{situation.situationName}}</h3>
     <h4>Contact</h4>
     <span>{{situation.contactPersons[0].name}}</span>&#160;<span>{{situation.contactPersons[0].phoneNumber}}</span>
     <hr>
     <h4>Message</h4>
     <p>{{situation.message}}</p>
-
-    <div class="mb-16 px-4">
-        <ion-button expand="full" color="danger" (click)="presentAlert()">
-            <ion-icon class="mr-2" src="/assets/icon/siren.svg"></ion-icon>
-            Emergency
-
-        </ion-button>
-    </div>
-
     <div text-center class="mb-30 d-flex" justify-content-center>
         <ion-button class="mr-2">Delete</ion-button>
         <ion-button (click)='openForm()'>Change</ion-button>
