@@ -8,7 +8,7 @@ import { StoreService } from '../api/store.service';
 })
 
 export class Tab2Page implements OnInit{
-  public situation: any = {};
+  public situation: any = {situationName: ''};
   public contactName: any;
   public phoneNumber: any;
   public myMessage: any;
@@ -18,11 +18,12 @@ export class Tab2Page implements OnInit{
   }
 
   ngOnInit() {
-    this.situation = this.storeService.get();
+      let situationFromCache = this.storeService.get()
+      this.situation = situationFromCache ? situationFromCache : this.situation;
   }
 
   showSituation(situation: {situationName: String}) {
-    return situation && situation.situationName;
+    return situation && situation.situationName !=='';
   }
 
   addContactPerson() {
