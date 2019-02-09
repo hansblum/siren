@@ -12,13 +12,13 @@ export class Tab3Page {
   public myAddress: any;
   public buttonLabel: string;
   constructor(private geolocation: Geolocation) {
-    this.myAddress = localStorage.getItem('Item 1');
+    this.myAddress = localStorage.getItem('Key');
     this.buttonLabel = this.myAddress ? 'Change' : 'Save';
   }
 
   saveAddress() {
     console.log('some perritos', this.myAddress)
-    let address = 'Item 1';
+    let address = 'Key';
     localStorage.setItem(address, this.myAddress);
     this.myAddress = localStorage.getItem(address);
     this.buttonLabel = this.myAddress ? 'Change' : 'Save';
