@@ -11,7 +11,6 @@ import { AlertController } from '@ionic/angular';
 })
 
 export class SirenSituationComponent implements OnInit {
-  private situations: any[];
   public situation: any;
   myLocation: any;
 
@@ -19,15 +18,11 @@ export class SirenSituationComponent implements OnInit {
     private geolocation: Geolocation,
     private sms: SMS,
     public alertController: AlertController) {
-    this.situations = [];
   }
 
   ngOnInit() {
-    this.storeService.get().then((situations) => {
-      this.situations = situations;
-      if (this.situations && this.situations.length !== 0) {
-        this.situation = this.situations[0];
-      }
+    this.storeService.get().then((situation) => {
+      this.situation = situation;
     });
   }
 
@@ -39,7 +34,7 @@ export class SirenSituationComponent implements OnInit {
     const popupMessage = await this.alertController.create({
       header: 'Siren Alert',
       subHeader: 'Message sent successfully',
-      message: `${this.situation.contactPersons[0].name} is coming to save you :)`,
+      message: `${this.situation.contactPerson} is coming to save you :)`,
       buttons: [{
         text: 'OK',
         cssClass: 'primary',
@@ -59,14 +54,14 @@ export class SirenSituationComponent implements OnInit {
     this.geolocation.getCurrentPosition()
       .then((resp) => {
         this.myLocation = resp.coords;
-        this.sms.send(this.situation.contactPersons[0].phoneNumber,
+        this.sms.send(this.situation.phoneNumber,
         `${this.situation.message} 😱. The location is https://maps.google.com/?q=${resp.coords.latitude},${resp.coords.longitude}`);
       }).catch((error) => {
-        this.sms.send(this.situation.contactPersons[0].phoneNumber,
+        this.sms.send(this.situation.phoneNumber,
         `${this.situation.message} 😱. The location is unknown`);
       });
 
-    this.geolocation.watchPosition().subscribe((data) => {
+      this.geolocation.watchPosition().subscribe((data) => {
     });
   }
 }
