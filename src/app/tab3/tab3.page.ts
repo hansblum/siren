@@ -29,8 +29,8 @@ export class Tab3Page {
   goHome() {
     this.geolocation.getCurrentPosition().then((resp) => {
       this.myLocation = resp.coords.latitude + ',' + resp.coords.longitude;
-      const homeLocation = "49.46800006494457,17.11514008755796";
-      window.location.href = "https://www.google.com/maps/dir/'" + this.myLocation + "'/'" + homeLocation + "'";
+      // const homeLocation = "1401 GA bussum";
+      window.location.href = "https://www.google.com/maps/dir/'" + this.myLocation + "'/'" + this.myAddress + "'";
     }).catch((error) => {
       this.myLocation = error;
     });

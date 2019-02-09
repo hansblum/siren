@@ -8,16 +8,14 @@
 
 <ion-content>
   <div class="no-address" ng-if="myAddress == ''">
-    <ion-input [(ngModel)]="myAddress" id="elementId" class="font-big" placeholder="My address" clearOnEdit padding-start>
-    </ion-input>
-    <ion-button expand="full" color="danger" (click)="saveAddress()">
+    <ion-item lines="none">
+        <ion-label position="stacked">My address</ion-label>
+        <ion-input  [(ngModel)]="myAddress" class="input font-big" clearOnEdit padding-start></ion-input>
+      </ion-item>
+    <ion-button expand="full" color="primary" (click)="saveAddress()">
       {{buttonLabel}}
     </ion-button>
   </div>
-  <!-- <div class="fillled-address" ng-if="myAddress != ''">
-    <h3>perrito {{myAddress == ''}}</h3>
-  </div> -->
-
 
   <ion-button expand="full" color="danger" (click)="goHome()">
     <ion-icon class="mr-2" name="business"></ion-icon>
